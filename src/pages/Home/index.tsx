@@ -17,8 +17,7 @@ export function Home({}: HomeProps) {
   return (
     <div className="w-full h-screen">
       <UserMenu.Wrapper toggled={isMenuToggled}>
-        <div className="w-full px-4 flex flex-col gap-4 items-center">
-          <div className={`flex ${isMenuToggled ? "self-center" : "self-end"}`}>
+          <div className={`flex px-4 ${isMenuToggled ? "self-center" : "self-end"}`}>
             {isMenuToggled ? (
               <UserMenu.TopButton
                 variant="primary"
@@ -50,7 +49,6 @@ export function Home({}: HomeProps) {
               toggled={isMenuToggled}
             />
           </UserMenu.Profile>
-        </div>
         <div className="flex flex-col gap-2 w-full items-center">
           <UserMenu.NavButton
             variant="primary"

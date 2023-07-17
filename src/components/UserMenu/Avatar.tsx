@@ -8,11 +8,7 @@ interface MenuAvatarProps {
 
 export function MenuAvatar({ image, logged, toggled }: MenuAvatarProps) {
   return (
-    <Avatar.Root
-      className={`bg-slate-600 inline-flex select-none items-center justify-center overflow-hidden rounded-full align-middle border-amber-600 shadow-md shadow-amber-400 h-12 w-12 ${
-        toggled ? "border-[2px]" : "border-[3px]"
-      }`}
-    >
+    <Avatar.Root className="bg-slate-600 inline-flex select-none items-center justify-center overflow-hidden rounded-full align-middle border-amber-500 h-12 w-12 border-[2px]">
       {logged ? (
         <>
           <Avatar.Image
