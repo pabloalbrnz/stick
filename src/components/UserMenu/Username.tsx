@@ -5,7 +5,7 @@ interface UsernameProps {
 
 export function Username({ text, toggled }: UsernameProps) {
   return (
-    <span className={`${toggled ? "hidden" : ""} font-medium text-slate-900`}>
+    <span className={`${toggled ? "hidden" : ""} font-semibold text-slate-900`}>
       {text}
     </span>
   );
