@@ -27,7 +27,7 @@ export function MenuAvatar({ image, logged, toggled }: MenuAvatarProps) {
       ) : (
         <span
           className={`text-amber-600 flex h-full w-full items-center justify-center bg-slate-200 font-bold ${
-            toggled ? "text-xl" : "text-4xl"
+            toggled ? "text-2xl" : "text-2xl"
           }`}
         >
           ?

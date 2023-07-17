@@ -18,7 +18,9 @@ export function NavButton({
     <button
       disabled={variant == "disabled" ? true : false}
       {...rest}
-      className={`${!toggled ? "flex gap-4 w-[85%] px-3 py-1.5" : "px-3 py-1.5"}
+      className={`flex ${
+        !toggled ? "gap-2 w-[85%] px-3 py-1.5" : "px-3 py-1.5"
+      }
       ${
         variant == "primary"
           ? "items-center transition-all ease-linear rounded-lg bg-amber-50 hover:bg-amber-100 font-medium text-amber-500 hover:text-amber-600 focus:outline-amber-500 shadow-sm shadow-amber-300 border-[1px] box-border border-amber-200 hover:border-amber-300"
@@ -28,7 +30,23 @@ export function NavButton({
       }`}
     >
       <Icon.icon size={Icon.size} />
-      {!toggled ? <span className="text-sm">{text}</span> : <></>}
+
+      {!toggled ? (
+        <>
+          <div
+            className={`h-4 w-[1px] opacity-50 rounded ${
+              variant == "primary"
+                ? "bg-amber-500"
+                : variant == "dangerous"
+                ? "bg-red-600"
+                : "bg-neutral-400"
+            }`}
+          ></div>{" "}
+          <span className="inline-block whitespace-nowrap text-sm overflow-hidden">{text}</span>
+        </>
+      ) : (
+        <></>
+      )}
     </button>
   );
 }
