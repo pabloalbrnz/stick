@@ -30,9 +30,12 @@ export function App() {
               />
             )}
           </div>
-          <UserMenu.Profile>
-            <UserMenu.Avatar toggled={isMenuToggled} />
-            <UserMenu.Username text="pulse" toggled={isMenuToggled} />
+          <UserMenu.Profile toggled={isMenuToggled}>
+            <UserMenu.Avatar toggled={isMenuToggled} logged={isLogged} />
+            <UserMenu.Username
+              text={isLogged ? "pulse" : "Guest"}
+              toggled={isMenuToggled}
+            />
           </UserMenu.Profile>
         </div>
         <div className="flex flex-col gap-2 w-full items-center">
@@ -59,17 +62,17 @@ export function App() {
           </div>
           {isLogged ? (
             <UserMenu.NavButton
-              variant="primary"
-              text="Log In"
-              Icon={{ icon: BiSolidLogIn, size: 24 }}
+              variant="dangerous"
+              text="Log Out"
+              Icon={{ icon: BiSolidLogOut, size: 24 }}
               toggled={isMenuToggled}
               onClick={() => setIsLogged(false)}
             />
           ) : (
             <UserMenu.NavButton
-              variant="dangerous"
-              text="Log Out"
-              Icon={{ icon: BiSolidLogOut, size: 24 }}
+              variant="primary"
+              text="Log In"
+              Icon={{ icon: BiSolidLogIn, size: 24 }}
               toggled={isMenuToggled}
               onClick={() => setIsLogged(true)}
             />

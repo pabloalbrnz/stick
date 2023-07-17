@@ -2,11 +2,16 @@ import { ReactNode } from "react";
 
 interface ProfileWrapperProps {
   children: ReactNode;
+  toggled: boolean;
 }
 
-export function ProfileWrapper({ children }: ProfileWrapperProps) {
+export function ProfileWrapper({ children, toggled }: ProfileWrapperProps) {
   return (
-    <div className="flex flex-col gap-2 items-center justif-center group/avatar">
+    <div
+      className={`w-full px-2 gap-8 flex items-center group/avatar ${
+        toggled ? "justify-center" : "justify-start"
+      }`}
+    >
       {children}
     </div>
   );
