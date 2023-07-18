@@ -8,15 +8,11 @@ import { Calendar } from "../../components/Calendar";
 import { useState } from "react";
 import { handleUser } from "../handleUser";
 
-import { useNavigate } from "react-router-dom";
-
 interface HomeProps {}
 
 export function Home({}: HomeProps) {
   const { actions, states } = handleUser();
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
-
-  const navigate = useNavigate();
 
   return (
     <div className="w-full h-screen">
@@ -56,19 +52,19 @@ export function Home({}: HomeProps) {
           />
         </UserMenu.Profile>
         <div className="flex flex-col gap-2 w-full items-center">
-          <UserMenu.NavButton
-            variant="primary"
-            text="Profile"
-            Icon={{ icon: BiSolidUserCircle, size: 24 }}
-            toggled={isMenuToggled}
-            onClick={() => navigate("/sticks/profile")}
-          />
+            <UserMenu.NavButton
+              variant="primary"
+              text="Profile"
+              Icon={{ icon: BiSolidUserCircle, size: 24 }}
+              toggled={isMenuToggled}
+              link="/stick/profile"
+            />
           <UserMenu.NavButton
             variant="disabled"
             text="Help"
             Icon={{ icon: RiQuestionFill, size: 24 }}
             toggled={isMenuToggled}
-            onClick={() => navigate("/sticks/help")}
+            link=""
             disabled={true}
           />
           <UserMenu.NavButton
@@ -76,7 +72,7 @@ export function Home({}: HomeProps) {
             text="Settings"
             Icon={{ icon: PiGearSixFill, size: 24 }}
             toggled={isMenuToggled}
-            onClick={() => navigate("/sticks/settings")}
+            link="/stick/settings"
           />
           <div className="p-2 w-full h-fit flex justify-center">
             <div className="bg-amber-300 h-[2px] w-[50%] rounded" />
