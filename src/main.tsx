@@ -4,6 +4,7 @@ import "./index.css";
 import { App } from "./pages/App";
 import { Home } from "./pages/Home";
 import { SignIn } from "./pages/SignIn";
+import { Error } from "./pages/Error";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -14,6 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/stick" element={<App />} />
         <Route path="/stick/signin" element={<SignIn />} />
         <Route path="/stick/home" element={<Home />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
